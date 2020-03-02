@@ -2,8 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import styles from './App.css';
 
-import TreeMatrix from 'tree-matrix';
-//import 'tree-matrix/tree-matrix.css';
+import TreeMatrix from 'react-tree-matrix/lib/tree-matrix';
+import 'react-tree-matrix/lib/tree-matrix.css';
 
 const customRender = (cellData) => {
   const style = { };
@@ -14,7 +14,7 @@ const customRender = (cellData) => {
 return (<div style={style} className={styles.cellHeight} title={cellData.text}>
     {cellData.text}
 </div>);
-}
+};
 
 const previewHead = {
   title: '规划',
@@ -23,104 +23,95 @@ const previewHead = {
       title: '工作',
       type: 'work',
       children: [{
-          title: '牵头单位',
+          title: '任务',
           type: 'task',
       }],
   }],
 };
 
 const programWork = [{
-  key: '1',
-  title: '规划一',
+  title: '规划',
   type: 'program',
   children: [{
-      key: '1-1',
-      title: '规划一一',
+      title: '规划',
       type: 'program',
       children: [{
-          key: '1-2-1',
           title: '工作',
           type: 'work',
           children:[{
-            key: '1-2-1',
             title: '工作',
             type: 'work',
             children: [{
-                key: '1-2-1-1',
                 title: '任务',
                 type: 'task',
             }],
         }],
       }],
   }, {
-      key: '1-2',
-      title: '规划一二',
+      title: '规划',
       type: 'program',
       children: [{
-          key: '1-2-1',
           title: '工作',
           type: 'work',
           children: [{
-              key: '1-2-1-1',
-              title: '任务',
-              type: 'task',
+              title: '工作',
+              type: 'work',
+              children: [{
+                  title: '工作',
+                  type: 'work',
+                  children: [{
+                      title: '任务',
+                      type: 'task',
+                  },],
+              }],
           }],
       }],
   }],
 }, {
-  key: '2',
-  title: '规划二',
+  title: '规划',
   type: 'program',
   children: [{
-      key: '3',
-      title: '工作四',
+      title: '工作',
       type: 'work',
       children: [{
-          key: '1-2-1-1',
           title: '任务',
           type: 'task',
       }],
   },{
-    key: '3',
-    title: '工作四',
+    title: '工作',
     type: 'work',
     children: [{
-        key: '1-2-1-1',
         title: '任务',
         type: 'task',
     }],
 }],
 }, {
-  key: '3',
-  title: '规划三',
+  title: '规划',
   type: 'program',
   children: [{
-      key: '3',
-      title: '工作四',
+      title: '工作',
       type: 'work',
       children: [{
-          key: '1-2-1-1',
           title: '任务',
           type: 'task',
       }],
   }],
 }, {
-  key: '4',
-  title: '规划四',
+  title: '规划',
   type: 'program',
   children: [{
-      key: '4-1',
-      title: '规划四一',
+      title: '规划',
       type: 'program',
       children: [{
-          key: '3',
-          title: '工作四',
+          title: '工作',
           type: 'work',
           children: [{
-              key: '1-2-1-1',
               title: '任务',
-              type: 'task'
-          },],
+              type: 'task',
+          },{
+              title: '任务',
+              type: 'task',
+          }],
       }],
   }],
 }];
