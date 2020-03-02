@@ -2,8 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import styles from './App.css';
 
-import TreeMatrix from 'tree-matrix/tree-matrix';
-import 'tree-matrix/tree-matrix.css';
+import TreeMatrix from 'tree-matrix';
+//import 'tree-matrix/tree-matrix.css';
 
 const customRender = (cellData) => {
   const style = { };

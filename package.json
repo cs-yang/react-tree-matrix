@@ -2,7 +2,7 @@
   "name": "react-tree-matrix",
   "version": "0.0.1",
   "description": "树型结构转矩阵合并table",
-  "main": "index.js",
+  "main": "lib/tree-matrix.js",
   "scripts": {
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
