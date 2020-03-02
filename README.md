@@ -1,7 +1,7 @@
 # react-tree-matrix
 大纲视图展示
 ### Demo
- ![image](https://github.com/cs-yang/react-tree-matrix/tree-matrix.png)
+ ![image](https://github.com/cs-yang/react-tree-matrix/raw/master/tree-matrix.png)
  ```js
 const data = [{
   title: '规划',
