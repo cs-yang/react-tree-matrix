@@ -1,11 +1,12 @@
 {
   "name": "react-tree-matrix",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "树型结构转矩阵合并table",
-  "main": "lib/tree-matrix.js",
+  "main": "lib/index.js",
   "scripts": {
-    "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "father build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json,tpl}'"
   },
   "repository": {
     "type": "git",
@@ -25,21 +26,28 @@
   },
   "homepage": "https://github.com/cs-yang/react-tree-matrix#readme",
   "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-react": "^7.8.3",
-    "@babel/runtime": "^7.8.4",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-css-only": "^2.0.0",
-    "rollup-plugin-node-resolve": "^5.2.0"
+    "babel-plugin-import": "^1.13.1",
+    "babel-plugin-lodash": "^3.3.4",
+    "lint-staged": "^10.4.2",
+    "prettier": "^2.1.2"
   },
   "peerDependencies": {
+    "lodash": "^4.17.20",
     "prop-types": "15.7.2",
     "react": "^16.8.0"
   },
   "dependencies": {
-    "global": "^4.4.0",
-    "rollup": "^1.31.1",
+    "father": "^2.29.10",
     "uxcore": "^0.22.24"
+  },
+  "lint-staged": {
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write",
+      "git add"
+    ],
+    "*.{js,jsx,less,md,json,tpl}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

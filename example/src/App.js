@@ -2,119 +2,164 @@ import React from 'react';
 import logo from './logo.svg';
 import styles from './App.css';
 
-import TreeMatrix from 'react-tree-matrix/lib/tree-matrix';
-import 'react-tree-matrix/lib/tree-matrix.css';
+import TreeMatrix from 'react-tree-matrix';
 
 const customRender = (cellData) => {
-  const style = { };
+  const style = {};
   if (cellData.y === 0) {
     style.fontWeight = 'bold';
-}
+  }
 
-return (<div style={style} className={styles.cellHeight} title={cellData.text}>
-    {cellData.text}
-</div>);
+  return (
+    <div style={style} className={styles.cellHeight} title={cellData.text}>
+      {cellData.text}
+    </div>
+  );
 };
 
 const previewHead = {
   title: '规划',
   type: 'program',
-  children: [{
+  children: [
+    {
       title: '工作',
       type: 'work',
-      children: [{
+      children: [
+        {
           title: '任务',
           type: 'task',
-      }],
-  }],
+        },
+      ],
+    },
+  ],
 };
 
-const programWork = [{
-  title: '规划',
-  type: 'program',
-  children: [{
-      title: '规划',
-      type: 'program',
-      children: [{
-          title: '工作',
-          type: 'work',
-          children:[{
+const programWork = [
+  {
+    title: '规划',
+    type: 'program',
+    children: [
+      {
+        title: '规划',
+        type: 'program',
+        children: [
+          {
             title: '工作',
             type: 'work',
-            children: [{
+            children: [
+              {
+                title: '工作',
+                type: 'work',
+                children: [
+                  {
+                    title: '任务',
+                    type: 'task',
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        title: '规划',
+        type: 'program',
+        children: [
+          {
+            title: '工作',
+            type: 'work',
+            children: [
+              {
+                title: '工作',
+                type: 'work',
+                children: [
+                  {
+                    title: '工作',
+                    type: 'work',
+                    children: [
+                      {
+                        title: '任务',
+                        type: 'task',
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: '规划',
+    type: 'program',
+    children: [
+      {
+        title: '工作',
+        type: 'work',
+        children: [
+          {
+            title: '任务',
+            type: 'task',
+          },
+        ],
+      },
+      {
+        title: '工作',
+        type: 'work',
+        children: [
+          {
+            title: '任务',
+            type: 'task',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: '规划',
+    type: 'program',
+    children: [
+      {
+        title: '工作',
+        type: 'work',
+        children: [
+          {
+            title: '任务',
+            type: 'task',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: '规划',
+    type: 'program',
+    children: [
+      {
+        title: '规划',
+        type: 'program',
+        children: [
+          {
+            title: '工作',
+            type: 'work',
+            children: [
+              {
                 title: '任务',
                 type: 'task',
-            }],
-        }],
-      }],
-  }, {
-      title: '规划',
-      type: 'program',
-      children: [{
-          title: '工作',
-          type: 'work',
-          children: [{
-              title: '工作',
-              type: 'work',
-              children: [{
-                  title: '工作',
-                  type: 'work',
-                  children: [{
-                      title: '任务',
-                      type: 'task',
-                  },],
-              }],
-          }],
-      }],
-  }],
-}, {
-  title: '规划',
-  type: 'program',
-  children: [{
-      title: '工作',
-      type: 'work',
-      children: [{
-          title: '任务',
-          type: 'task',
-      }],
-  },{
-    title: '工作',
-    type: 'work',
-    children: [{
-        title: '任务',
-        type: 'task',
-    }],
-}],
-}, {
-  title: '规划',
-  type: 'program',
-  children: [{
-      title: '工作',
-      type: 'work',
-      children: [{
-          title: '任务',
-          type: 'task',
-      }],
-  }],
-}, {
-  title: '规划',
-  type: 'program',
-  children: [{
-      title: '规划',
-      type: 'program',
-      children: [{
-          title: '工作',
-          type: 'work',
-          children: [{
-              title: '任务',
-              type: 'task',
-          },{
-              title: '任务',
-              type: 'task',
-          }],
-      }],
-  }],
-}];
+              },
+              {
+                title: '任务',
+                type: 'task',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+];
 
 function App() {
   return (
@@ -126,7 +171,7 @@ function App() {
         data={[previewHead, ...programWork]}
         types={['program', 'work', 'task', 'weight']}
         render={customRender}
-    />
+      />
     </div>
   );
 }
